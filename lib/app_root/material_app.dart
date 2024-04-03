@@ -1,4 +1,5 @@
 import 'package:code_case_intern/screens/main_navigation_screen.dart';
+import 'package:code_case_intern/screens/side_screens/menu_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,9 +17,12 @@ class CodeCaseIntern extends StatelessWidget {
         BlocProvider(create: (context) => NavigationCubit()),
       ]
       ,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MainNavigationScreen(),
+      child: SafeArea(
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+         home: MenuScreen(),
+          //home: MainNavigationScreen(),
+        ),
       ),
     );
   }
