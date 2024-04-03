@@ -1,6 +1,8 @@
 import 'package:code_case_intern/core/blocks/app_bar_charge_block.dart';
 import 'package:flutter/material.dart';
 
+import '../core/blocks/rewards_title_block.dart';
+
 class MainNavigationScreen extends StatelessWidget {
   const MainNavigationScreen({super.key});
 
@@ -23,6 +25,19 @@ class MainNavigationScreen extends StatelessWidget {
                AppBarChargesBlock(),
           ],
     ),
+      body:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 20,top: 10,bottom: 10),
+            child: Text('Rewards for leads:',
+            style: TextStyle(
+              fontSize: 20,color: Colors.black87
+            ),),
+          ),
+          RewardsTitleBlock()
+        ],
+      ),
     );
 
   }
