@@ -1,4 +1,6 @@
 import 'package:code_case_intern/core/blocks/app_bar_charge_block.dart';
+import 'package:code_case_intern/core/blocks/reward_list_block.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../core/blocks/rewards_title_block.dart';
@@ -9,36 +11,56 @@ class MainNavigationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      backgroundColor: Colors.indigoAccent.shade700,
-      bottom: const PreferredSize(
-        preferredSize: Size.fromHeight(10), child:SizedBox(),
+      appBar: AppBar(
+        backgroundColor: Colors.indigoAccent.shade700,
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(10),
+          child: SizedBox(),
+        ),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15))),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        actions: [
+          AppBarChargesBlock(),
+        ],
       ),
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15))),
-   leading: IconButton(
-     onPressed: (){}, icon: const Icon(Icons.menu,color: Colors.white,size: 30,),
-   ),
-          actions: [
-               AppBarChargesBlock(),
-          ],
-    ),
-      body:  Column(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20,top: 10,bottom: 10),
-            child: Text('Rewards for leads:',
-            style: TextStyle(
-              fontSize: 20,color: Colors.black87
-            ),),
+            padding: const EdgeInsets.only(left: 20, top: 10),
+            child: Text(
+              'Rewards for leads:',
+              style: TextStyle(fontSize: 20, color: Colors.black87),
+            ),
           ),
-          RewardsTitleBlock()
+          RewardsTitleBlock(),
+          Divider(
+            color: Colors.grey.shade400,
+            indent: 20,
+            endIndent: 20,
+          ),
+          Expanded(
+            child: ListView.separated(
+                itemBuilder: (context, index) => RewardListBlock(),
+                separatorBuilder: (context, index) =>Divider(
+                  color: Colors.grey.shade400,
+                  indent: 20,
+                  endIndent: 20,
+                ),
+                itemCount: 8),
+          )
         ],
       ),
     );
-
   }
 }
