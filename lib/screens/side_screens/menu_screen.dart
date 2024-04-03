@@ -24,7 +24,9 @@ class MenuScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InkWell(onTap: () {},
+            InkWell(onTap: () {
+              Navigator.pop(context);
+            },
                 child: const ButtonWithIconBlock()),
             const UserBlock(),
             Container(
@@ -36,7 +38,7 @@ class MenuScreen extends StatelessWidget {
               ),
               child: Expanded(
                 child: ListView.separated(
-                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                     itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       child: SettingListBlock(lable: settingSectionsTexts[index],icon: settingSectionsIcons[index],),
@@ -54,7 +56,7 @@ class MenuScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Balance Coins',
+                  const Text('Balance Coins',
                     style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 20),),
                   CurrentBalanceBlock()
                 ],

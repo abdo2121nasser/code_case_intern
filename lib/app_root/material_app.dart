@@ -20,8 +20,8 @@ class CodeCaseIntern extends StatelessWidget {
       child: SafeArea(
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-         home: MenuScreen(),
-          //home: MainNavigationScreen(),
+         //home: MenuScreen(),
+          home: MainNavigationScreen(),
         ),
       ),
     );
