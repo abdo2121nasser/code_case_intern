@@ -42,6 +42,20 @@ class MainNavigationScreen extends StatelessWidget {
               AppBarChargesBlock(),
             ],
           ),
+          bottomNavigationBar: BottomNavigationBar(
+
+          elevation: 20,
+          selectedItemColor: Colors.black87,
+          unselectedItemColor: Colors.grey.shade700,
+          onTap: (newIndex) => navCubit.changeScreenIndex(newIndex:  newIndex,),
+          currentIndex:navCubit.screenIndex,
+          items: [
+            const BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+            const BottomNavigationBarItem(icon: Icon(Icons.monetization_on_outlined), label: ''),
+            const BottomNavigationBarItem(icon: Icon(Icons.medical_information), label:''),
+            const BottomNavigationBarItem(icon: Icon(Icons.signal_cellular_alt_sharp), label: ''),
+          ],
+        ),
           body:navCubit.screens[navCubit.screenIndex] ,
 
         );
