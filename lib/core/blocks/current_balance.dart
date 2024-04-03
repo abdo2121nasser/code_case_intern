@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 
-class AppBarChargesBlock extends StatelessWidget {
+class CurrentBalanceBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

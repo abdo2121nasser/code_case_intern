@@ -1,4 +1,4 @@
-import 'package:code_case_intern/core/blocks/app_bar_charge_block.dart';
+import 'package:code_case_intern/core/blocks/current_balance.dart';
 import 'package:code_case_intern/core/blocks/reward_list_block.dart';
 import 'package:code_case_intern/core/cubits/navigation_cubit/navigation_cubit.dart';
 import 'package:code_case_intern/core/cubits/navigation_cubit/navigation_cubit.dart';
@@ -39,7 +39,7 @@ class MainNavigationScreen extends StatelessWidget {
               ),
             ),
             actions: [
-              AppBarChargesBlock(),
+              CurrentBalanceBlock(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(

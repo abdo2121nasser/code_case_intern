@@ -2,6 +2,7 @@ import 'package:code_case_intern/core/blocks/setting_list_block.dart';
 import 'package:code_case_intern/core/blocks/user_block.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/blocks/current_balance.dart';
 import '../../core/blocks/button_with_icon_block.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -23,10 +24,11 @@ class MenuScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InkWell(onTap: () {}, child: const ButtonWithIconBlock()),
+            InkWell(onTap: () {},
+                child: const ButtonWithIconBlock()),
             const UserBlock(),
-            SizedBox(height: 10,),
             Container(
+              margin: const EdgeInsets.symmetric(vertical: 15),
               height: 300,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -42,7 +44,22 @@ class MenuScreen extends StatelessWidget {
                     separatorBuilder: (context, index) => Divider(color: Colors.grey.shade300,),
                     itemCount: 5),
               ),
-            )
+            ),
+          Container(
+            height: 60,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Balance Coins',
+                    style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 20),),
+                  CurrentBalanceBlock()
+                ],
+              ),
+          )
           ],
         ),
       ),
